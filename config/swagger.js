@@ -10,14 +10,22 @@ const swaggerDefinition = {
     description: "API documentation for Subscription Tracker backend",
   },
   basePath: "/api/v1",
+  // servers: [
+  //   {
+  //     url: `http://localhost:${PORT}/api/v1`, // 👈 base url
+  //     description: "Local server",
+  //   },
+  //   {
+  //     url: "https://your-deployed-api.com/api/v1", // 👈 production server
+  //     description: "Production server",
+  //   },
+  // ],
   servers: [
     {
-      url: `http://localhost:${PORT}/api/v1`, // 👈 base url
-      description: "Local server",
-    },
-    {
-      url: "https://your-deployed-api.com/api/v1", // 👈 production server
-      description: "Production server",
+      url:
+        process.env.NODE_ENV === "production"
+          ? "https://todoapp-1-t00m.onrender.com/api/v1"
+          : `http://localhost:${PORT}/api/v1`,
     },
   ],
   components: {

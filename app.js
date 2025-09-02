@@ -10,7 +10,7 @@ import arcjetMiddleware from "./middlewares/arcjet.middleware.js";
 import workflowRouter from "./routes/workflow.routes.js";
 import { swaggerSpec, swaggerUiMiddleware } from "./config/swagger.js";
 import todoRouter from "./routes/todo.routes.js";
-
+const port = process.env.PORT || PORT;
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -35,7 +35,12 @@ app.get("/", (req, res) => {
 });
 
 // Start server
-app.listen(PORT, async () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+// app.listen(PORT, async () => {
+//   console.log(`Server running on http://localhost:${PORT}`);
+//   connectToDataBase();
+// });
+
+app.listen(port, async () => {
+  console.log(`🚀 Server running on port ${port}`);
   connectToDataBase();
 });
