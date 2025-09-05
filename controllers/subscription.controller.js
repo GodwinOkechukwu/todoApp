@@ -1,5 +1,5 @@
-import { SERVER_URL } from "../config/env.js";
-import { workFlowClient } from "../config/upstash.js";
+// import { SERVER_URL } from "../config/env.js";
+// import { workFlowClient } from "../config/upstash.js";
 import Subscription from "../model/subscription.model.js";
 import { sendEmail } from "../utils/send-email.js";
 
@@ -11,9 +11,9 @@ export const createSubscription = async (req, res, next) => {
       user: req.user._id,
     });
 
-    await workFlowClient.trigger({
-      url: `${SERVER_URL}`,
-    });
+    // await workFlowClient.trigger({
+    // url: `${SERVER_URL}`,/
+    // });
     await sendEmail({
       to: req.user.email,
       subject: "Subscription Successful ✅",
