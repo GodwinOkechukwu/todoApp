@@ -9,7 +9,8 @@ import cookieParser from "cookie-parser";
 // import workflowRouter from "./routes/workflow.routes.js";
 import { swaggerSpec, swaggerUiMiddleware } from "./config/swagger.js";
 import todoRouter from "./routes/todo.routes.js";
-const port = process.env.PORT || PORT;
+const port = Number(process.env.PORT) || Number(PORT) || 3000;
+
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
