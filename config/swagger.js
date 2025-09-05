@@ -24,7 +24,7 @@ const swaggerDefinition = {
     {
       url:
         process.env.NODE_ENV === "production"
-          ? "https://todoapp-1-t00m.onrender.com/api/v1"
+          ? "https://todoapp-2-oblh.onrender.com/api/v1"
           : `http://localhost:${PORT}/api/v1`,
     },
   ],
